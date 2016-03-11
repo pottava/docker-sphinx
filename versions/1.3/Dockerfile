@@ -5,6 +5,6 @@
 
 FROM pottava/python:2.7
 RUN apk --no-cache add --virtual build-dependencies py-pip python-dev build-base wget \
-      && pip install 'sphinx == 1.3.5' \
+      && pip install 'sphinx == 1.3.7' \
       && apk --no-cache add make \
       && apk del build-dependencies
