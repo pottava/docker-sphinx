@@ -4,5 +4,9 @@
 
 FROM pottava/sphinx:1.7
 
-RUN tlmgr install collection-langjapanese \
-      collection-latexrecommended collection-latexextra
+RUN apk --no-cache add --virtual build-deps fontconfig \
+    && tlmgr install \
+      collection-latexrecommended collection-fontsrecommended \
+      collection-latexextra collection-langjapanese \
+    && fc-cache -fv \
+    && apk del --purge -r build-deps
