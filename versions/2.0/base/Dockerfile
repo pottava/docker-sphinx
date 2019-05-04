@@ -4,7 +4,7 @@
 # docker run --rm -v `pwd`:/doc -w /doc pottava/sphinx:2.0 make html
 # docker run --rm -v `pwd`:/doc -w /doc pottava/sphinx:2.0 /bin/sh -c "make clean && make html"
 
-FROM pottava/latex:2018
+FROM pottava/latex:2019
 
 RUN apk --no-cache add python3 py3-pip make
 RUN apk --no-cache add --virtual build-deps python-dev build-base \
